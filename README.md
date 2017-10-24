@@ -3,12 +3,25 @@ Penetrasi
 ===================
 ----------
 
+Pendahuluan
+----------
+
+-------------
+
+Dasar Teori
+----------
+
+
+-------------
+
+
+
 ## Daftar isi
 - [Pendahuluan](#pendahuluan)
 - [Dasar Teori](#dasar-teori)
 
 
-Pendahuluan
+Instalasi Server
 -------------
 
 StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
@@ -19,14 +32,9 @@ StackEdit stores your documents in your browser, which means all your documents 
 
 ----------
 
-Dasar Teori
-----------
 
 
--------------
-
-
-Synchronization
+Instalasi Penetrator
 -------------------
 
 StackEdit can be combined with <i class="icon-provider-gdrive"></i> **Google Drive** and <i class="icon-provider-dropbox"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.
@@ -44,4 +52,6 @@ You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive
 #### <i class="icon-refresh"></i> Save a document
 
 You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.
+
+----------
 
