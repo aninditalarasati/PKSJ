@@ -57,3 +57,20 @@ You can save any document by opening the <i class="icon-refresh"></i> **Synchron
 
 ----------
 
+Instalasi Server
+----------
+
+----------
+
+Instalasi Desktop Ubuntu
+----------
+
+----------
+
+Langkah-langkah Penetrasi
+----------
+Ncrack
+Hydra
+
+
+  
