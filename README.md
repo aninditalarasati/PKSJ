@@ -19,7 +19,7 @@ Dasar Teori
 - [Dasar Teori](#dasar-teori)
 - [Instalasi Server](#instalasi-server)
 - [Instalasi Desktop Ubuntu](#instalasi-desktop-ubuntu)
-- [Langkah-langkah Penetrasi](#angkah-langkah-penetrasi)
+- [Langkah-langkah Penetrasi](#langkah-langkah-penetrasi)
   - [Ncrack](#crack)
   - [Hydra](#ydra)
 
