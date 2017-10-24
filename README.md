@@ -4,9 +4,9 @@ Penetrasi
 ----------
 
 ## Daftar isi
+- [Pendahuluan](#pendahuluan)
+- [Dasar Teori](#dasar-teori)
 
-
-[TOC]
 
 Pendahuluan
 -------------
@@ -18,6 +18,12 @@ StackEdit stores your documents in your browser, which means all your documents 
 > - StackEdit is accessible offline after the application has been loaded for the first time.
 
 ----------
+
+Dasar Teori
+----------
+
+
+-------------
 
 
 Synchronization
