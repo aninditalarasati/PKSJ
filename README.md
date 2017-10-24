@@ -14,12 +14,14 @@ Dasar Teori
 
 -------------
 
-
-
 ## Daftar isi
 - [Pendahuluan](#pendahuluan)
 - [Dasar Teori](#dasar-teori)
-
+- [Instalasi Server]
+- [Instalasi Desktop Ubuntu]
+- [Langkah-langkah Penetrasi]
+  - [Ncrack]
+  - [Hydra]
 
 Instalasi Server
 -------------
