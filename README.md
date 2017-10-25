@@ -3,11 +3,16 @@ Penetrasi
 ===================
 -------------
 
+halo!
+Pada tugas pertama ini, kami mencoba penetration testing.
+aplikasi yang kami gunakan adalah hydra dan ncrack.
+sistem yang diserang adalah sebuah server ubuntu.
+
 ## Daftar isi
 - [Pendahuluan](#pendahuluan)
 - [Dasar Teori](#dasar-teori)
 - [Instalasi Server](#instalasi-server)
-- [Instalasi Desktop Ubuntu](#instalasi-desktop-ubuntu)
+- [Instalasi Penetrator](#instalasi-penetrator)
 - [Langkah-langkah Penetrasi](#langkah-langkah-penetrasi)
   - [Ncrack](#crack)
   - [Hydra](#ydra)
@@ -16,7 +21,9 @@ Penetrasi
 
 Pendahuluan
 ----------
-
+apa itu penetration testing?
+penetration testing adalah simulasi serangan yang dilakukan terhadap suatu jaringan. 
+hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
 -------------
 
 Dasar Teori
@@ -52,11 +59,22 @@ Fitur-fitur pada Ncrack di antaranya interface yang sangat fleksibel sehingga me
 Instalasi Server
 -------------
 
-StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
+Langkah-langkah instalasi ubuntu server :
+
 
 > **Note:**
 
-> - StackEdit is accessible offline after the application has been loaded for the first time.
+> - buka aplikasi VirtualBox, klik New
+> - masukkan konfigurasi yang sesuai dengan server ubuntu
+> - tambahkan adapter untuk menghubungkan ubuntu server dan desktop(penetrator)
+> - caranya dengan klik kanan di virtual machine->settings->network->adapter2->enable dengan attached to host-only adaptor
+> - adapter 2 sudah terpasang
+> - masukkan kaset ubuntu server
+> - caranya buka settings->storage->masukkan disk->ok
+> - start ubuntu server dan diinstall seperti biasa
+> - tambahkan ip untuk ssh, sebagai penghubung ubuntu server dan penetrator.
+> - caranya etc/network/interfaces
+> sesuaikan nama interface dengan nama virtual network card. kami menggunakan enp0s8.
 
 ----------
 
@@ -83,23 +101,8 @@ You can save any document by opening the <i class="icon-refresh"></i> **Synchron
 
 ----------
 
-Instalasi Server
-----------
-
-----------
-
-Instalasi Desktop Ubuntu
-----------
-
-----------
-
-Langkah-langkah Penetrasi
-----------
-Ncrack
-Hydra
 
 
-----------
 
 Konfigurasi Countermeasure
 ---------
