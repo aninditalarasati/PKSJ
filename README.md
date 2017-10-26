@@ -23,22 +23,24 @@ hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
 
 ### 2.3 THC-Hydra
 
-Hydra is a parallized login cracker which supports numerous protocols to attack. New modules are easy to add, beside that, it is flexible and very fast.
+Hydra merupakan *tool* pembobol login yang menyediakan berbagai macam protokol untuk serangan. Modul-modul baru mudah untuk ditambahkan, selain itu *tool* ini juga fleksibel dan sangat cepat performanya.
 
-Hydra was tested to compile on Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry, and is made available under GPLv3 with a special OpenSSL license expansion.
+Hydra telah diuji *compile* pada sistem operasi Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry, dan tersedia di bawah GPLv3 dengan pengembangan lisensi OpenSSL khusus.
 
 Currently this tool supports:
-    Asterisk, AFP, Cisco AAA, Cisco auth, Cisco enable, CVS, Firebird, FTP, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-POST, HTTP-PROXY, HTTPS-FORM-GET, HTTPS-FORM-POST, HTTPS-GET, HTTPS-POST, HTTPS-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, MYSQL, NCP, NNTP, Oracle Listener, Oracle SID, Oracle, PC-Anywhere, PCNFS, POP3, POSTGRES, RDP, Rexec, Rlogin, Rsh, RTSP, S7-300, SAP/R3, SIP, SMB, SMTP, SMTP Enum, SNMP, SOCKS5, SSH (v1 and v2), Subversion, Teamspeak (TS2), Telnet, VMware-Auth, VNC and XMPP.
+Saat ini Hydra menyediakan protokol:
 
-For HTTP, POP3, IMAP and SMTP, several login mechanisms like plain and MD5 digest etc. are supported.
+    Asterisk, AFP, Cisco AAA, Cisco auth, Cisco enable, CVS, Firebird, FTP, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-POST, HTTP-PROXY, HTTPS-FORM-GET, HTTPS-FORM-POST, HTTPS-GET, HTTPS-POST, HTTPS-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, MYSQL, NCP, NNTP, Oracle Listener, Oracle SID, Oracle, PC-Anywhere, PCNFS, POP3, POSTGRES, RDP, Rexec, Rlogin, Rsh, RTSP, S7-300, SAP/R3, SIP, SMB, SMTP, SMTP Enum, SNMP, SOCKS5, SSH (v1 dan v2), Subversion, Teamspeak (TS2), Telnet, VMware-Auth, VNC dan XMPP.
 
-This tool is a proof of concept code, to give researchers and security consultants the possiblity to show how easy it would be to gain unauthorized access from remote to a system.
+Untuk HTTP, POP3, IMAP dan SMTP, beberapa mekanisme login seperti *plain digest* dan *MD5 digest* juga sudah tersedia.
 
-The program was written van Hauser and is additiionally supported by David Maciejak.
-        
+*Tool* ini merupakan pembuktian konsep, untuk memberikan para peneliti dan konsultan keamanan jaringan sebuah peluang untuk menunjukkan betapa mudahnya mendapatkan akses jarak jauh ke dalam sistem.
+
+Program Hydra telah ditulis oleh van Hauser dan kini didukung oleh David Maciejak.        
+
 (Sumber*: https://www.thc.org/thc-hydra/)
 
-* : Teridentifikasi oleh google chrome sebagai Dangerous
+\* : Teridentifikasi oleh google chrome sebagai Dangerous
 
 ### 2.4 Ncrack
 
@@ -46,7 +48,15 @@ Ncrack merupakan *tool* pembobol autentikasi jaringan komputer berkecepatan ting
 
 Fitur-fitur pada Ncrack di antaranya interface yang sangat fleksibel sehingga memberikan kontrol penuh pada pengguna atas operasi-operasi jaringan, serangan bruteforce yang canggih, *timing template* untuk memudahkan penggunaan, *runtime interaction* yang mirip dengan Nmap, dan masih banyak lagi. Protokol-protokol yang didukung mencakup RDP, SSH, HTTP(S), SMB, POP3(S), VNC, FTP, SIP, Redis, PostgreSQL, MySQL, dan Telnet.
 
-(https://nmap.org/ncrack/)
+(Sumber: https://nmap.org/ncrack/)
+
+### 2.5 Fail2ban
+
+Fail2ban memindai file log (seperti /var/log/apache/error_log) dan melarang akses untuk alamat-alamat IP yang menunjukkan tanda-tanda kejahatan -- terlalu sering gagal memasukkan password, mencari-cari kelemahan sistem, dll. Biasanya fail2ban digunakan untuk memperbarui aturan-aturan pada *firewall* agar mencegah akses dari alamat-alamat IP tertentu dalam jangka waktu tertentu, meskipun any arbitrary other action (e.g. sending an email) could also be configured. Out of the box Fail2Ban comes with filters for various services (apache, courier, ssh, etc).
+
+Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun tetap tidak bisa mengeliminasi risiko autentikasi lemah yang masih ada. Configure services to use only two factor or public/private authentication mechanisms if you really want to protect services.
+
+(Sumber: https://www.fail2ban.org/wiki/index.php/Main_Page)
 
 ## 3. Instalasi Server
 
@@ -95,7 +105,7 @@ You can save any document by opening the <i class="icon-refresh"></i> **Synchron
 #### 5.2.1 Konfigurasi
 #### 5.2.2 Testing
 
-## 6 Uji Penetrasi 2
+## 6. Uji Penetrasi 2
 
 ### 6.1 Konfigurasi fail2ban
 Pemasangan fail2ban dapat dipasang dari repositori ubuntu. Pemasangan dapat dilakukan dengan `$ sudo apt-get install fail2ban`.
@@ -115,7 +125,7 @@ maxretry = 3
 Pada dasarnya, fail2ban akan membuat rules pada wirewall menggunakan iptables. Dan rules akan ditulis ulang ketika terdapat client yang mencoba mengakses sekian kali sesuai konfigurasi yang ditulis. 
 
 
-### 6.2 Testing 
+### 6.2 Testing  
 Hydra dijalankan pada Penetrator untuk brute force Ubuntu Server.
 
 Berikut hasil dari logfile fail2ban `/var/log/fail2ban.log` pada Ubuntu Server:
