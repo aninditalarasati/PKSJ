@@ -167,3 +167,6 @@ $ sudo iptables -S
 -A f2b-sshd -s 192.168.56.101/32 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-sshd -j RETURN
 ```
+
+
+Pada percobaan ini, meskipun dibatasi `maxretry = 3`, SSH Server masih menerima percobaan brute force sejumlah 16 kali. Hingga akhirnya fail2ban memblock attacker dengan delay 190 ms dari percobaan kelima.
