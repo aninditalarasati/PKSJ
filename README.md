@@ -18,10 +18,10 @@ penetration testing adalah simulasi serangan yang dilakukan terhadap suatu jarin
 hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
 
 ## 2. Dasar Teori
-### 2.1 Penetration Testing
-### 2.2 Brute Force
+### 2.1. Penetration Testing
+### 2.2. Brute Force
 
-### 2.3 THC-Hydra
+### 2.3. THC-Hydra
 
 Hydra merupakan *tool* pembobol login yang menyediakan berbagai macam protokol untuk serangan. Modul-modul baru mudah untuk ditambahkan, selain itu *tool* ini juga fleksibel dan sangat cepat performanya.
 
@@ -42,7 +42,7 @@ Program Hydra telah ditulis oleh van Hauser dan kini didukung oleh David Macieja
 
 \* : Teridentifikasi oleh google chrome sebagai Dangerous
 
-### 2.4 Ncrack
+### 2.4. Ncrack
 
 Ncrack merupakan *tool* pembobol autentikasi jaringan komputer berkecepatan tinggi. *Tool* ini dibuat untuk membantu perusahaan-perusahaan mengamankan jaringan komputer dengan secara proaktif menguji semua *host* dan perangkat jaringan apakah ada yang memiliki *password* lemah. Para ahli keamanan juga bergantung pada Ncrack ketika mengaudit *client* mereka. Ncrack didesain untuk menggunakan pendekatan modular, sintaks *command-line* yang mirip dengan Nmap, dan mesin yang dinamis sehingga bisa menyesuaikan perilakunya dengan respon dari jaringan. Ncrack menyediakan audit *multi-host* yang cepat tapi tetap dapat diandalkan (*reliable*).
 
@@ -50,32 +50,27 @@ Fitur-fitur pada Ncrack di antaranya interface yang sangat fleksibel sehingga me
 
 (Sumber: https://nmap.org/ncrack/)
 
-### 2.5 Fail2ban
+### 2.5. Fail2ban
 
-Fail2ban memindai file log (seperti /var/log/apache/error_log) dan melarang akses untuk alamat-alamat IP yang menunjukkan tanda-tanda kejahatan -- terlalu sering gagal memasukkan password, mencari-cari kelemahan sistem, dll. Biasanya fail2ban digunakan untuk memperbarui aturan-aturan pada *firewall* agar mencegah akses dari alamat-alamat IP tertentu dalam jangka waktu tertentu, meskipun any arbitrary other action (e.g. sending an email) could also be configured. Out of the box Fail2Ban comes with filters for various services (apache, courier, ssh, etc).
+Fail2ban memindai file log (seperti /var/log/apache/error_log) dan melarang akses untuk alamat-alamat IP yang menunjukkan tanda-tanda kejahatan -- terlalu sering gagal memasukkan password, mencari-cari kelemahan sistem, dll. Biasanya fail2ban digunakan untuk memperbarui aturan-aturan pada *firewall* agar mencegah akses dari alamat-alamat IP tertentu dalam jangka waktu tertentu.
 
-Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun tetap tidak bisa mengeliminasi risiko autentikasi lemah yang masih ada. Configure services to use only two factor or public/private authentication mechanisms if you really want to protect services.
+Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun tetap tidak bisa mengeliminasi risiko autentikasi lemah yang masih ada.
 
 (Sumber: https://www.fail2ban.org/wiki/index.php/Main_Page)
 
-## 3. Instalasi Server
+## 3. Instalasi Ubuntu Server
 
-Langkah-langkah instalasi ubuntu server :
-
-
-> **Note:**
-
-> - buka aplikasi VirtualBox, klik New
-> - masukkan konfigurasi yang sesuai dengan server ubuntu
-> - tambahkan adapter untuk menghubungkan ubuntu server dan desktop(penetrator)
-> - caranya dengan klik kanan di virtual machine->settings->network->adapter2->enable dengan attached to host-only adaptor
-> - adapter 2 sudah terpasang
-> - masukkan kaset ubuntu server
-> - caranya buka settings->storage->masukkan disk->ok
-> - start ubuntu server dan diinstall seperti biasa
-> - tambahkan ip untuk ssh, sebagai penghubung ubuntu server dan penetrator.
-> - caranya etc/network/interfaces
-> sesuaikan nama interface dengan nama virtual network card. kami menggunakan enp0s8.
+> - Buka aplikasi VirtualBox.
+> - Buat Virtual Machine (VM) baru dengan klik **New**, lalu masukkan konfigurasi yang sesuai dengan Ubuntu Server. Sesuaikan setting memory dengan kemampuan host. Ukuran hardisk cukup sebesar 10-20 GB. Pilih format .vdi saja untuk VM.
+> - Setelah VM dibuat, buka **Settings** untuk VM tersebut.
+> - Pilih menu **Network**, lalu sediakan/aktifkan (*enable*) 2 buah adapter. Adapter pertama adalah untuk menghubungkan VM dengan host, sedangkan adapter 2 untuk menghubungkan antar VM (dalam hal ini adalah penetrator).
+> - Untuk **Adapter 1** pilih **Attached to: NAT**.
+> - Untuk **Adapter 2** pilih **Attached to: Host-only Adapter**.
+> - Selanjutnya pilih menu **Storage**, lalu masukkan disk dengan **Optical Drive** yang diambil dari file .iso Ubuntu Server. Setting selesai.
+> - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
+> - Setelah OS Ubuntu Server terinstall, tambahkan setting untuk interface kedua (adapter 2) agar VM ini dapat terhubung ke VM penetrator. 
+> - Untuk melakukan hal di atas, ubah file /etc/network/interfaces dengan menambahkan baris berikut:
+//insert gambar
 
 ## 4. Instalasi Penetrator
 
@@ -96,18 +91,18 @@ You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive
 You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.
 
 ## 5. Uji Penetrasi 1
-### 5.1 Ncrack
+### 5.1. Ncrack
 
-#### 5.1.1 Konfigurasi
-#### 5.1.2 Testing
+#### 5.1.1. Konfigurasi
+#### 5.1.2. Testing
 
-### 5.2 HTC-Hydra
-#### 5.2.1 Konfigurasi
-#### 5.2.2 Testing
+### 5.2. HTC-Hydra
+#### 5.2.1. Konfigurasi
+#### 5.2.2. Testing
 
 ## 6. Uji Penetrasi 2
 
-### 6.1 Konfigurasi fail2ban
+### 6.1. Konfigurasi fail2ban
 Pemasangan fail2ban dapat dipasang dari repositori ubuntu. Pemasangan dapat dilakukan dengan `$ sudo apt-get install fail2ban`.
 
 Konfigurasi dari `fail2ban` terdapat pada direktori `/etc/fail2ban/`. Disarankan untuk membuat file `jail.local` tersendiri untuk mengonfigurasi pengaturan. File `jail.local` ini akan mengonverwrite pengaturan yang terdapat pada `jail.conf`.
@@ -125,7 +120,7 @@ maxretry = 3
 Pada dasarnya, fail2ban akan membuat rules pada wirewall menggunakan iptables. Dan rules akan ditulis ulang ketika terdapat client yang mencoba mengakses sekian kali sesuai konfigurasi yang ditulis. 
 
 
-### 6.2 Testing  
+### 6.2. Testing  
 Hydra dijalankan pada Penetrator untuk brute force Ubuntu Server.
 
 Berikut hasil dari logfile fail2ban `/var/log/fail2ban.log` pada Ubuntu Server:
