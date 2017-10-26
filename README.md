@@ -9,9 +9,8 @@ sistem yang diserang adalah sebuah server ubuntu.
 2. [Dasar Teori](#dasar-teori)
 3. [Instalasi Server](#instalasi-server)
 4. [Instalasi Penetrator](#instalasi-penetrator)
-5. [Langkah-langkah Penetrasi](#langkah-langkah-penetrasi)
-  5.1 [Ncrack](#crack)
-  5.2 [Hydra](#ydra)
+5. [Uji Penetrasi 1](#)
+6. [Uji Penetrasi 2](#)
   
 ## 1. Pendahuluan
 apa itu penetration testing?
