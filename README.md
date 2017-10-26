@@ -127,53 +127,43 @@ maxretry = 3
 
 Testing
 ----------
-Sebelum ada user yang terblokir, fail2ban membuat rule di iptables seperti berikut
+Hydra dijalankan pada Ubuntu Desktop untuk brute force Ubuntu Server.
+
+Berikut hasil dari logfile fail2ban `/var/log/fail2ban.log` pada Ubuntu Server:
+
+```
+$ sudo tail -f /var/log/fail2ban.log
+
+2017-10-25 21:29:57,562 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,586 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,595 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,604 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,613 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,623 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,633 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,643 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,664 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,670 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,676 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,681 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,686 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,688 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,791 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,803 fail2ban.filter         [2811]: INFO    [sshd] Found 192.168.56.101
+2017-10-25 21:29:57,925 fail2ban.actions        [2811]: NOTICE  [sshd] Ban 192.168.56.101
+2017-10-25 21:29:58,136 fail2ban.actions        [2811]: NOTICE  [sshd] 192.168.56.101 already banned
+2017-10-25 21:29:59,138 fail2ban.actions        [2811]: NOTICE  [sshd] 192.168.56.101 already banned
+```
+Berikut daftar rules dari iptables. Pada daftar rules dibawah terdapat rule untuk memblokir IP 192.168.56.101.
+
 ```
 $ sudo iptables -S
 
 -P INPUT ACCEPT
--P FORWARD DROP
+-P FORWARD ACCEPT
 -P OUTPUT ACCEPT
-...
 -N f2b-sshd
 -A INPUT -p tcp -m multiport --dports 22 -j f2b-sshd
-...
+-A f2b-sshd -s 192.168.56.101/32 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-sshd -j RETURN
 ```
-
-Ketika server telah dipasang fail2ban. Salah seorang client mencoba untuk diakses namun gagal sekian kalo, maka fail2ban akan menulis rule di iptables berupa
-
-```
-$ sudo iptables -S
-
--P INPUT ACCEPT
--P FORWARD DROP
--P OUTPUT ACCEPT
-...
--N f2b-sshd
--A INPUT -p tcp -m multiport --dports 22 -j f2b-sshd
-...
--A f2b-sshd -s 10.151.36.5/32 -j REJECT --reject-with icmp-port-unreachable
--A f2b-sshd -j RETURN
-```
-
-Pada rule diatas, fail2ban memblokir client dengan IP 10.151.36.5.
-
-Jika dilihat dari file log /var/log/fail2ban.log, maka dapat dilihat di baris terakhir,
-```
-$ tail /var/log/fail2ban.log
-
-2017-10-25 04:54:22,297 fail2ban.filter         [29305]: INFO    [sshd] Found 10.151.36.5
-2017-10-25 04:54:24,375 fail2ban.filter         [29305]: INFO    [sshd] Found 10.151.36.5
-2017-10-25 04:54:31,918 fail2ban.filter         [29305]: INFO    [sshd] Found 10.151.36.5
-2017-10-25 04:54:32,853 fail2ban.actions        [29305]: NOTICE  [sshd] Ban 10.151.36.5
-```
-
-Ketika client 10.151.36.5 mengakses lagi dengan ssh, maka ia akan gagal dan mengeluarkan output, berikut
-
-```
-$ ssh administrator@10.151.36.22
-
-ssh: connect to host 10.151.36.22 port 22: Connection refused
-```
-
