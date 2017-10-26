@@ -1,35 +1,28 @@
-Tugas 1 PKSJ
-Penetrasi
-===================
--------------
+# Tugas 1 PKSJ | Penetrasi
 
-halo!
 Pada tugas pertama ini, kami mencoba penetration testing.
 aplikasi yang kami gunakan adalah hydra dan ncrack.
 sistem yang diserang adalah sebuah server ubuntu.
 
 ## Daftar isi
-- [Pendahuluan](#pendahuluan)
-- [Dasar Teori](#dasar-teori)
-- [Instalasi Server](#instalasi-server)
-- [Instalasi Penetrator](#instalasi-penetrator)
-- [Langkah-langkah Penetrasi](#langkah-langkah-penetrasi)
-  - [Ncrack](#crack)
-  - [Hydra](#ydra)
+1. [Pendahuluan](#pendahuluan)
+2. [Dasar Teori](#dasar-teori)
+3. [Instalasi Server](#instalasi-server)
+4. [Instalasi Penetrator](#instalasi-penetrator)
+5. [Langkah-langkah Penetrasi](#langkah-langkah-penetrasi)
+  5.1 [Ncrack](#crack)
+  5.2 [Hydra](#ydra)
   
-----------
-
-Pendahuluan
-----------
+# 1. Pendahuluan
 apa itu penetration testing?
 penetration testing adalah simulasi serangan yang dilakukan terhadap suatu jaringan. 
 hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
--------------
 
-Dasar Teori
-----------
+# 2. Dasar Teori
+## 2.1 Penetration Testing
+## 2.2 Brute Force
 
-A. THC-Hydra
+## 2.3 THC-Hydra
 
 Hydra is a parallized login cracker which supports numerous protocols to attack. New modules are easy to add, beside that, it is flexible and very fast.
 
@@ -48,7 +41,7 @@ The program was written van Hauser and is additiionally supported by David Macie
 
 * : Teridentifikasi oleh google chrome sebagai Dangerous
 
-B. Ncrack
+## 2.4 Ncrack
 
 Ncrack merupakan *tool* pembobol autentikasi jaringan komputer berkecepatan tinggi. *Tool* ini dibuat untuk membantu perusahaan-perusahaan mengamankan jaringan komputer dengan secara proaktif menguji semua *host* dan perangkat jaringan apakah ada yang memiliki *password* lemah. Para ahli keamanan juga bergantung pada Ncrack ketika mengaudit *client* mereka. Ncrack didesain untuk menggunakan pendekatan modular, sintaks *command-line* yang mirip dengan Nmap, dan mesin yang dinamis sehingga bisa menyesuaikan perilakunya dengan respon dari jaringan. Ncrack menyediakan audit *multi-host* yang cepat tapi tetap dapat diandalkan (*reliable*).
 
@@ -56,8 +49,7 @@ Fitur-fitur pada Ncrack di antaranya interface yang sangat fleksibel sehingga me
 
 (https://nmap.org/ncrack/)
 
-Instalasi Server
--------------
+# 3. Instalasi Server
 
 Langkah-langkah instalasi ubuntu server :
 
@@ -76,12 +68,7 @@ Langkah-langkah instalasi ubuntu server :
 > - caranya etc/network/interfaces
 > sesuaikan nama interface dengan nama virtual network card. kami menggunakan enp0s8.
 
-----------
-
-
-
-Instalasi Penetrator
--------------------
+# 4. Instalasi Penetrator
 
 StackEdit can be combined with <i class="icon-provider-gdrive"></i> **Google Drive** and <i class="icon-provider-dropbox"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.
 
@@ -99,35 +86,34 @@ You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive
 
 You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.
 
-----------
+# 5. Langkah Penetrasi
+## 5.1 Ncrack
 
+## 5.1.1 Konfigurasi
+## 5.1.2 Testing
 
+## 5.2 HTC-Hydra
 
+### 5.2.1 Konfigurasi Countermeasure
+Pemasangan fail2ban dapat dipasang dari repositori ubuntu. Pemasangan dapat dilakukan dengan `$ sudo apt-get install fail2ban`.
 
-Konfigurasi Countermeasure
----------
-- Pemasangan fail2ban dapat dipasang dari repositori ubuntu. Pemasangan dapat dilakukan dengan `$ sudo apt-get install fail2ban`.
+Konfigurasi dari `fail2ban` terdapat pada direktori `/etc/fail2ban/`. Disarankan untuk membuat file `jail.local` tersendiri untuk mengonfigurasi pengaturan. File `jail.local` ini akan mengonverwrite pengaturan yang terdapat pada `jail.conf`.
 
-- Konfigurasi dari fail2ban terdapat pada direktori /etc/fail2ban. Disarankan untuk membuat file jail.local tersendiri untuk mengonfigurasi pengaturan. File jail.local ini akan mengonverwrite pengaturan yang terdapat pada jail.conf.
-
-- Ganti durasi waktu banned selama 3 menit atau 180 second
-
+Ganti durasi waktu banned selama 3 menit atau 180 second
 ```
 bantime = 180
-
 ```
 
-- Ganti jumlah percobaan sejumlah 3 kali.
+Ganti jumlah percobaan sejumlah 3 kali.
 ```
 maxretry = 3
 ```
 
-- Pada dasarnya, fail2ban akan membuat rules pada wirewall menggunakan iptables. Dan rules akan ditulis ulang ketika terdapat client yang mencoba mengakses sekian kali sesuai konfigurasi yang ditulis. 
+Pada dasarnya, fail2ban akan membuat rules pada wirewall menggunakan iptables. Dan rules akan ditulis ulang ketika terdapat client yang mencoba mengakses sekian kali sesuai konfigurasi yang ditulis. 
 
 
-Testing
-----------
-Hydra dijalankan pada Ubuntu Desktop untuk brute force Ubuntu Server.
+### 5.2.2 Testing 
+Hydra dijalankan pada Penetrator untuk brute force Ubuntu Server.
 
 Berikut hasil dari logfile fail2ban `/var/log/fail2ban.log` pada Ubuntu Server:
 
