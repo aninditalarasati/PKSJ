@@ -96,17 +96,46 @@ penetrator yang kita gunakan adalah ubuntu desktop
 > - Untuk **Adapter 2** pilih **Attached to: Host-only Adapter**.
 > - Selanjutnya pilih menu **Storage**, lalu masukkan disk dengan **Optical Drive** yang diambil dari file .iso Ubuntu Server. Setting selesai.
 > - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
-
+> - jangan lupa buat file wordlist berisikan dictionary dan tanpa dictionary : nano pass.sh dan nano nopass.sh
 
 ## 5. Uji Penetrasi 1
+
 ### 5.1. Ncrack
 
 #### 5.1.1. Konfigurasi
+
+> langkah-langkah instalasi ncrack
+> - wget https://nmap.org/ncrack/dist/ncrack-0.5.tar.gz
+> - tar -xvzf ncrack.tar.gz
+> - cd ncrack
+> - ./configure
+> - make
+> - make install
+
 #### 5.1.2. Testing
 
+command untuk percobaan ncrack dengan dictionary
+> - ncrack -p 22 --user anindita -P pass.txt 192.168.56.105
+
 ### 5.2. HTC-Hydra
+
 #### 5.2.1. Konfigurasi
+
+> langkah-langkah instalasi hydra
+> - wget https://nmap.org/ncrack/dist/ncrack-0.5.tar.gz
+> - tar -xvzf hydra.tar.gz
+> - cd hydra
+> - ./configure
+> - make
+> - make install
+
 #### 5.2.2. Testing
+
+command untuk hydra dengan dictionary 
+> - hydra -l anindita -P pass.txt ssh -V
+
+command untuk hydra tanpa directionary
+> - hydra -l anindita -x 9:9:a 192.168.56.105 ssh -V
 
 ## 6. Uji Penetrasi 2
 
