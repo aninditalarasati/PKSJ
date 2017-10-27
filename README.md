@@ -116,7 +116,7 @@ penetrator yang kita gunakan adalah ubuntu desktop
 
 command untuk percobaan ncrack dengan dictionary
 > - ncrack -p 22 --user anindita -P pass.txt 192.168.56.105
-![alt text](PKSJ/ncrack_dictionary.PNG)
+> - ![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
 
 ### 5.2. HTC-Hydra
 
