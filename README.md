@@ -131,15 +131,18 @@ command untuk percobaan ncrack dengan dictionary
 > - make install
 
 #### 5.2.2. Testing
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
 
 command untuk hydra dengan dictionary 
 > - hydra -l anindita -P pass.txt ssh -V
-![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
+
+
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/hydra_nodictionary.PNG)
 
 command untuk hydra tanpa directionary
 > - hydra -l anindita -x 9:9:a 192.168.56.105 ssh -V
 PKSJ/hydra_nodictionary.PNG
-![alt text](PKSJ/hydra_nodictionary.PNG)
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/hydra_nodictionary.PNG)
 
 ## 6. Uji Penetrasi 2
 
