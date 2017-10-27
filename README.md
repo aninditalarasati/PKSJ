@@ -136,6 +136,7 @@ command untuk hydra dengan dictionary
 
 command untuk hydra tanpa directionary
 > - hydra -l anindita -x 9:9:a 192.168.56.105 ssh -V
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
 
 ## 6. Uji Penetrasi 2
 
