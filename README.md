@@ -134,7 +134,7 @@ command untuk percobaan ncrack dengan dictionary
 
 command untuk hydra dengan dictionary 
 > - hydra -l anindita -P pass.txt ssh -V
-![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
+> - ![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
 
 
 command untuk hydra tanpa directionary
