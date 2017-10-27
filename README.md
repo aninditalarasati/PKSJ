@@ -80,7 +80,7 @@ Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun t
 > - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
 > - Setelah OS Ubuntu Server terinstall, tambahkan setting untuk interface kedua (adapter 2) agar VM ini dapat terhubung ke VM penetrator. 
 > - Untuk melakukan hal di atas, ubah file /etc/network/interfaces dengan menambahkan baris berikut:
-![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ip\ ssh.PNG)
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ip ssh.PNG)
 
 ## 4. Instalasi Penetrator
 
@@ -134,7 +134,7 @@ command untuk percobaan ncrack dengan dictionary
 
 command untuk hydra dengan dictionary 
 > - hydra -l anindita -P pass.txt ssh -V
-> - ![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/hydra\ pass.PNG)
+> - ![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/hydra pass.PNG)
 
 
 command untuk hydra tanpa directionary
