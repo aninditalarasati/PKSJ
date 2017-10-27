@@ -19,7 +19,13 @@ hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
 
 ## 2. Dasar Teori
 ### 2.1. Penetration Testing
+A penetration test, or pen-test, is an attempt to evaluate the security of an IT infrastructure by safely trying to exploit vulnerabilities. These vulnerabilities may exist in operating systems, services and application flaws, improper configurations or risky end-user behavior. Such assessments are also useful in validating the efficacy of defensive mechanisms, as well as, end-user adherence to security policies. 
+
+Penetration tests are typically performed using manual or automated technologies to systematically compromise servers, endpoints, web applications, wireless networks, network devices, mobile devices and other potential points of exposure. Once vulnerabilities have been successfully exploited on a particular system, testers may attempt to use the compromised system to launch subsequent exploits at other internal resources – specifically by trying to incrementally achieve higher levels of security clearance and deeper access to electronic assets and information via privilege escalation.
+
+(source : https://www.coresecurity.com/content/penetration-testing)
 ### 2.2. Brute Force
+Brute force adalah suatu me
 
 ### 2.3. THC-Hydra
 
@@ -74,14 +80,11 @@ Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun t
 
 ## 4. Instalasi Penetrator
 
-StackEdit can be combined with <i class="icon-provider-gdrive"></i> **Google Drive** and <i class="icon-provider-dropbox"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.
+penetrator yang kita gunakan adalah ubuntu desktop
 
-> **Note:**
+> langkah-langkah
 
-> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.
-> - Imported documents are downloaded in your browser and are not transmitted to a server.
-> - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.
-
+> -
 #### <i class="icon-refresh"></i> Open a document
 
 You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive** or the <i class="icon-provider-dropbox"></i> **Dropbox** by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.
