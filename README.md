@@ -116,6 +116,7 @@ penetrator yang kita gunakan adalah ubuntu desktop
 
 command untuk percobaan ncrack dengan dictionary
 > - ncrack -p 22 --user anindita -P pass.txt 192.168.56.105
+![alt text](PKSJ/ncrack_dictionary.PNG)
 
 ### 5.2. HTC-Hydra
 
@@ -133,10 +134,12 @@ command untuk percobaan ncrack dengan dictionary
 
 command untuk hydra dengan dictionary 
 > - hydra -l anindita -P pass.txt ssh -V
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
 
 command untuk hydra tanpa directionary
 > - hydra -l anindita -x 9:9:a 192.168.56.105 ssh -V
-![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ncrack_dictionary.PNG)
+PKSJ/hydra_nodictionary.PNG
+![alt text](PKSJ/hydra_nodictionary.PNG)
 
 ## 6. Uji Penetrasi 2
 
