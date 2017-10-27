@@ -19,13 +19,17 @@ hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
 
 ## 2. Dasar Teori
 ### 2.1. Penetration Testing
+
 A penetration test, or pen-test, is an attempt to evaluate the security of an IT infrastructure by safely trying to exploit vulnerabilities. These vulnerabilities may exist in operating systems, services and application flaws, improper configurations or risky end-user behavior. Such assessments are also useful in validating the efficacy of defensive mechanisms, as well as, end-user adherence to security policies. 
 
 Penetration tests are typically performed using manual or automated technologies to systematically compromise servers, endpoints, web applications, wireless networks, network devices, mobile devices and other potential points of exposure. Once vulnerabilities have been successfully exploited on a particular system, testers may attempt to use the compromised system to launch subsequent exploits at other internal resources – specifically by trying to incrementally achieve higher levels of security clearance and deeper access to electronic assets and information via privilege escalation.
 
 (source : https://www.coresecurity.com/content/penetration-testing)
 ### 2.2. Brute Force
-Brute force adalah suatu me
+
+Brute force attack adalah salah satu metode peretasan password. bruteforce akan mencoba semua kemungkinan kombinasi yang ada pada suatu file. pada tugas kali ini, kami membuat dua file untuk percobaan metode bruteforce :
+1. file pass.txt berisi wordlist yang terisi password asli (dictionary)
+2. file npass.txt berisi wordlist yang tidak terisi password asli (nodirectionary)
 
 ### 2.3. THC-Hydra
 
@@ -84,14 +88,15 @@ penetrator yang kita gunakan adalah ubuntu desktop
 
 > langkah-langkah
 
-> -
-#### <i class="icon-refresh"></i> Open a document
+> - Buka aplikasi VirtualBox.
+> - Buat Virtual Machine (VM) baru dengan klik **New**, lalu masukkan konfigurasi yang sesuai dengan Ubuntu Server. Sesuaikan setting memory dengan kemampuan host. Ukuran hardisk cukup sebesar 10-20 GB. Pilih format .vdi saja untuk VM.
+> - Setelah VM dibuat, buka **Settings** untuk VM tersebut.
+> - Pilih menu **Network**, lalu sediakan/aktifkan (*enable*) 2 buah adapter. Adapter pertama adalah untuk menghubungkan VM dengan host, sedangkan adapter 2 untuk menghubungkan antar VM (dalam hal ini adalah penetrator).
+> - Untuk **Adapter 1** pilih **Attached to: NAT**.
+> - Untuk **Adapter 2** pilih **Attached to: Host-only Adapter**.
+> - Selanjutnya pilih menu **Storage**, lalu masukkan disk dengan **Optical Drive** yang diambil dari file .iso Ubuntu Server. Setting selesai.
+> - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
 
-You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive** or the <i class="icon-provider-dropbox"></i> **Dropbox** by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.
-
-#### <i class="icon-refresh"></i> Save a document
-
-You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.
 
 ## 5. Uji Penetrasi 1
 ### 5.1. Ncrack
